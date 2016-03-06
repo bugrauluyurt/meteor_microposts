@@ -1,3 +1,8 @@
+// Subscription section for the published collections in the server.js
+Meteor.subscribe("posts");
+Meteor.subscribe("ProfileImages");
+Meteor.subscribe("UserImages");
+
 Meteor.startup(function () {
   AccountsEntry.config({
      homeRoute: '/',            
@@ -14,3 +19,4 @@ Template.registerHelper('getProfileImg', function(userId){
   var imgUrl = UserImages.findOne({userId: userId}).image;
   return imgUrl;
 });
+
